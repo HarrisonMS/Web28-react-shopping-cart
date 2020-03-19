@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
+import { useLocalStorage } from './hooks/useLocalStorage';
 import data from './data';
 import { ProductContext } from './contexts/ProductContext'
 import { CartContext } from './contexts/CartContext'
@@ -12,10 +13,10 @@ import ShoppingCart from './components/ShoppingCart';
 function App() {
 
 	const [products] = useState(data);
-	const [cart, setCart] = useState([]);
+	const [cart, setCart] = useLocalStorage('cart',[]);
 
 	const addItem = item => {
-    // *1 add the given item to the cart
+    
     setCart([...cart, item])
   };
 	const removeItem = id => {
