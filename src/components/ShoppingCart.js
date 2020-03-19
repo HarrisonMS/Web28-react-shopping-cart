@@ -16,7 +16,6 @@ const ShoppingCart = () => {
 			{cart.map(item => (
 				<Item key={item.id} {...item} />
 			))}
-
 			<div className="shopping-cart__checkout">
 				<p>Total: ${getCartTotal()}</p>
 				<button>Checkout</button>
