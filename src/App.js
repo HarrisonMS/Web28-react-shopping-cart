@@ -16,7 +16,6 @@ function App() {
 	const [cart, setCart] = useLocalStorage('cart',[]);
 
 	const addItem = item => {
-    
     setCart([...cart, item])
   };
 	const removeItem = id => {
